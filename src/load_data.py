@@ -1,0 +1,13 @@
+def explore_dataset (df, name):
+    print(f"Dataset: {name}")
+    print("-" * 50)
+    print("Shape:", df.shape)
+    print("-" * 50)
+    print("Columns:", df.columns)
+    print("-" * 50)
+    print("Data types:\n", df.dtypes)
+    print("-" * 50)
+    print("Missing values:\n", df.isnull().sum())
+    print("-" * 50)
+    print("\nSample data:\n", df.head())
+    print("-" * 50)
