@@ -12,7 +12,6 @@ with revenue_monthly as (
 SELECT 
     month,
     total_revenue,
-    LAG(total_revenue) OVER (ORDER BY month) AS previous_month_revenue,
-    ROUND((total_revenue - LAG(total_revenue) OVER (ORDER BY month)) / NULLIF(LAG(total_revenue) OVER (ORDER BY month), 0) * 100, 2) AS revenue_growth_percentage
+    LAG(total_revenue) OVER (ORDER BY month) AS previous_month_revenue
 FROM revenue_monthly
 ORDER BY month DESC;
